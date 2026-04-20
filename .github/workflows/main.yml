@@ -23,3 +23,10 @@ jobs:
           context: ./Milestone-2-Assessment-Folder/Victoria-Robin/Docker-Containerization/
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/victoria-app:latest
+  -name: Check secret is set
+  run: |
+    if [ -z "${{ secrets.DOCKERHUB_USERNAME }}" ]; then
+      echo "SECRET IS EMPTY!"
+    else
+      echo "Secret is set ✅"
+    fi
