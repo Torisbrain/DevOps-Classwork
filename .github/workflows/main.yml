@@ -20,7 +20,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
-          # This matches your Milestone folder path
           context: ./Milestone-2-Assessment-Folder/Victoria-Robin/Docker-Containerization/
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/victoria-app:latest
