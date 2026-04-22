@@ -20,19 +20,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: ./Milestone-2-Assessment-Folder/Victoria-Robin/Docker-Containerization/
+          context: ./docker-file/
           push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/victoria-app:latest     
-      
-      - name: Check secrets are set
-        run: |
-          if [ -z "${{ secrets.DOCKERHUB_USERNAME }}" ]; then
-            echo "USERNAME IS EMPTY!"
-          else
-            echo "Username is set ✅"
-          fi
-          if [ -z "${{ secrets.DOCKERHUB_TOKEN }}" ]; then
-            echo "TOKEN IS EMPTY!"
-          else
-            echo "Token is set ✅"
-          fi
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/victoria-app:latest
